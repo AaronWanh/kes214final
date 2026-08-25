@@ -41,16 +41,16 @@ relevant_bq1 |>
   geom_line()
 
 
-# Moving averages example from EDS221 Day 10
-for (i in 1:(length(qs_smoothed$window_start))) {
-  # Set the start date
-  start_date <- qs_smoothed$window_start[i]
-  # Set the end date
-  end_date <- qs_smoothed$window_start[i] + 9   # 9 days after start date
-  # Finding K values to average
-  k_ranges <- qs_data$k_mgl[qs_data$sample_date >= start_date & qs_data$sample_date < end_date]
-  qs_smoothed$k_mgl[i] <- mean(k_ranges, na.rm = TRUE)
-  # Finding Mg values to average
-  mg_ranges <- qs_data$mg_mgl[qs_data$sample_date >= start_date & qs_data$sample_date < end_date]
-  qs_smoothed$mg_mgl[i] <- mean(mg_ranges,  na.rm = TRUE)
-}
+# LET"S SEE IF THIS MERGE CONFLICT WORKS # Moving averages example from EDS221 Day 10
+# for (i in 1:(length(qs_smoothed$window_start))) {
+#   # Set the start date
+#   start_date <- qs_smoothed$window_start[i]
+#   # Set the end date
+#   end_date <- qs_smoothed$window_start[i] + 9   # 9 days after start date
+#   # Finding K values to average
+#   k_ranges <- qs_data$k_mgl[qs_data$sample_date >= start_date & qs_data$sample_date < end_date]
+#   qs_smoothed$k_mgl[i] <- mean(k_ranges, na.rm = TRUE)
+#   # Finding Mg values to average
+#   mg_ranges <- qs_data$mg_mgl[qs_data$sample_date >= start_date & qs_data$sample_date < end_date]
+#   qs_smoothed$mg_mgl[i] <- mean(mg_ranges,  na.rm = TRUE)
+# }
