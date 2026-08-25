@@ -2,7 +2,7 @@ library(tidyverse)
 library(lubridate)
 
 # Reading in each dataset
-bq1_data <- read_csv("data/QuebradaCuenca1-Bisley.csv")
+BQ1_data <- read_csv("data/QuebradaCuenca1-Bisley.csv")
 bq2_data <- read_csv("data/QuebradaCuenca2-Bisley.csv")
 bq3_data <- read_csv("data/QuebradaCuenca3-Bisley.csv")
 PRM_data <- read_csv("data/RioMameyesPuenteRoto.csv")
