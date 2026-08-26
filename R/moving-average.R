@@ -43,3 +43,5 @@ moving_average <- function(stream_data) {
   }
   return(result)
 }
+
+# edit
