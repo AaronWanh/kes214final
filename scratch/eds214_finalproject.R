@@ -56,10 +56,10 @@ ggplot(
   facet_wrap(~Nutrient, scales = "free")
 
 # Calling the moving_average function to get the tibble of average conc. for BQ1
-BQ1_smoothed <- moving_average(relevant_bq1)
+Bq1_smoothed <- moving_average(relevant_bq1)
 
 # Reshape columns to long format
-bq1_smoothed_long <- BQ1_smoothed |>
+bq1_smoothed_long <- Bq1_smoothed |>
   pivot_longer(
     cols = c(k_mgl, NO3_ugl, mg_mgl, ca_mgl, NH4_ugl), # Columns to plot as Y
     names_to = "nutrient", # Column holding the original column names
