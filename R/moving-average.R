@@ -41,7 +41,5 @@ moving_average <- function(stream_data) {
     NH4_ranges <- stream_data$`NH4-N`[in_window]
     result$NH4_ugl[i] <- mean(NH4_ranges, na.rm = TRUE)
   }
-
   return(result)
-  
 }
