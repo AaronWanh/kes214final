@@ -27,6 +27,7 @@ relevant_bq3 <- bq3_data |>
 #rename(K_bq3 = K, `NO3-N_bq3` = `NO3-N`, Mg_bq3 = Mg, Ca_bq3 = Ca, `NH4-N_bq3` = `NH4-N`)
 
 relevant_PRM <- PRM_data |>
+  filter(Sample_Date >= "1988-10-18" & Sample_Date <= "1994-12-31") |>
   select(Sample_ID, Sample_Date, K, `NO3-N`, Mg, Ca, `NH4-N`) #|>
 #rename(K_PRM = K, `NO3-N_PRM` = `NO3-N`, Mg_PRM = Mg, Ca_PRM = Ca, `NH4-N_PRM` = `NH4-N`)
 
@@ -55,33 +56,139 @@ ggplot(
   geom_line() +
   facet_wrap(~Nutrient, scales = "free")
 
-# Calling the moving_average function to get the tibble of average conc. for BQ1
-Bq1_smoothed <- moving_average(relevant_bq1)
+# Calling the moving_average function to get the tibble of average conc. for all watersheds
+bq1_smoothed <- moving_average(relevant_bq1)
+bq2_smoothed <- moving_average(relevant_bq2)
+bq3_smoothed <- moving_average(relevant_bq3)
+PRM_smoothed <- moving_average(relevant_PRM)
 
-# Reshape columns to long format
-bq1_smoothed_long <- Bq1_smoothed |>
+combined_table <- rbind(bq1_smoothed, bq2_smoothed, bq3_smoothed, PRM_smoothed)
+
+# Manipulating the data frame
+combined_table_long <- combined_table |>
   pivot_longer(
-    cols = c(k_mgl, NO3_ugl, mg_mgl, ca_mgl, NH4_ugl), # Columns to plot as Y
-    names_to = "nutrient", # Column holding the original column names
-    values_to = "value" # Column holding the actual numbers
+    cols = "k_mgl":"NH4_ugl",
+    names_to = "Nutrient",
+    values_to = "Concentration"
   )
 
 
-# Plot the data
-bq1_smoothed_long |>
+# # Reshape columns to long format
+# bq1_smoothed_long <- bq1_smoothed |>
+#   pivot_longer(
+#     cols = c(k_mgl, NO3_ugl, mg_mgl, ca_mgl, NH4_ugl), # Columns to plot as Y
+#     names_to = "nutrient", # Column holding the original column names
+#     values_to = "value" # Column holding the actual numbers
+#   )
+
+# bq2_smoothed_long <- bq2_smoothed |>
+#   pivot_longer(
+#     cols = c(k_mgl, NO3_ugl, mg_mgl, ca_mgl, NH4_ugl), # Columns to plot as Y
+#     names_to = "nutrient", # Column holding the original column names
+#     values_to = "value" # Column holding the actual numbers
+#   )
+
+# bq3_smoothed_long <- bq3_smoothed |>
+#   pivot_longer(
+#     cols = c(k_mgl, NO3_ugl, mg_mgl, ca_mgl, NH4_ugl), # Columns to plot as Y
+#     names_to = "nutrient", # Column holding the original column names
+#     values_to = "value" # Column holding the actual numbers
+#   )
+
+# PRM_smoothed_long <- PRM_smoothed |>
+#   pivot_longer(
+#     cols = c(k_mgl, NO3_ugl, mg_mgl, ca_mgl, NH4_ugl), # Columns to plot as Y
+#     names_to = "nutrient", # Column holding the original column names
+#     values_to = "value" # Column holding the actual numbers
+#   )
+
+# # Plot the data
+# bq1_smoothed_long |>
+#   ggplot(
+#     aes(
+#       x = window_start,
+#       y = value,
+#       color = nutrient
+#     )
+#   ) +
+#   geom_line() +
+#   labs(
+#     title = "BQ1 Nutrient Concentrations with 9-week Moving Average",
+#     y = "Concentration",
+#     x = "Years"
+#   ) +
+#   facet_wrap(~nutrient, scales = "free")
+
+# bq2_smoothed_long |>
+#   ggplot(
+#     aes(
+#       x = window_start,
+#       y = value,
+#       color = nutrient
+#     )
+#   ) +
+#   geom_line() +
+#   labs(
+#     title = "BQ2 Nutrient Concentrations with 9-week Moving Average",
+#     y = "Concentration",
+#     x = "Years"
+#   ) +
+#   facet_wrap(~nutrient, scales = "free")
+
+# bq3_smoothed_long |>
+#   ggplot(
+#     aes(
+#       x = window_start,
+#       y = value,
+#       color = nutrient
+#     )
+#   ) +
+#   geom_line() +
+#   labs(
+#     title = "BQ3 Nutrient Concentrations with 9-week Moving Average",
+#     y = "Concentration",
+#     x = "Years"
+#   ) +
+#   facet_wrap(~nutrient, scales = "free")
+
+# PRM_smoothed_long |>
+#   ggplot(
+#     aes(
+#       x = window_start,
+#       y = value,
+#       color = nutrient
+#     )
+#   ) +
+#   geom_line() +
+#   labs(
+#     title = "PRM Nutrient Concentrations with 9-week Moving Average",
+#     y = "Concentration",
+#     x = "Years"
+#   ) +
+#   facet_wrap(~nutrient, scales = "free")
+
+
+# Trying to graph all on one graph
+
+combined_table_long |>
   ggplot(
     aes(
       x = window_start,
-      y = value,
-      color = nutrient
+      y = Concentration,
+      linetype = Sample_ID
     )
   ) +
   geom_line() +
+  theme(
+    strip.placement = "outside"
+  ) +
+  geom_vline(
+    xintercept = date("1989-09-19"),
+    linetype = "dashed"
+  ) +
   labs(
-    title = "BQ1 Nutrient Concentrations with 9-week Moving Average",
+    title = "Nutrient Concentrations with 9-week Moving Average",
     y = "Concentration",
     x = "Years"
   ) +
-  facet_wrap(~nutrient, scales = "free")
-
-# edit
+  facet_grid(Nutrient ~ ., scales = "free", switch = "y")

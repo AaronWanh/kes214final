@@ -3,6 +3,7 @@
 moving_average <- function(stream_data) {
   # Empty tibble for concentration averages
   result <- tibble(
+    Sample_ID = stream_data$Sample_ID[1],
     window_start = seq(ymd("1988-10-18"), ymd("1994-12-31"), by = "9 weeks"),
     k_mgl = NA,
     NO3_ugl = NA,
@@ -19,7 +20,8 @@ moving_average <- function(stream_data) {
     end_date <- result$window_start[i] + 63 # 9 weeks after start date
 
     # Logical vector that says which samples are inside the window
-    in_window <- stream_data$Sample_Date >= start_date & stream_data$Sample_Date < end_date
+    in_window <- stream_data$Sample_Date >= start_date &
+      stream_data$Sample_Date < end_date
 
     # Calculate mean concentrations for K and filling in result
     k_ranges <- stream_data$K[in_window]
