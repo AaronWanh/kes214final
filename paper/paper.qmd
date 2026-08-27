@@ -1,5 +1,4 @@
 
-
 # Reproducing a Time Series of Hurricane Hugo's Effect on Stream Water Concentrations
 
 Author: [Karolina Sienko](https://github.com/karolinasienko)
@@ -7,8 +6,9 @@ Author: [Karolina Sienko](https://github.com/karolinasienko)
 Contributors: [Max Czapanskiy](https://github.com/FlukeAndFeather) & [Ale Vida Meza](https://github.com/avidalmeza)
 
 ## Background
-This repository contains all of the data and code used to analyze the effects of Hurricane Hugo's disturbance on stream water concentrations of potassium (K), nitrate (NO$_3$), magnesium (Mg), calcium, (Ca) and ammonium (NH$_4$), in Puente Roto Mameyes (PRM) and Bisley Quebradas 1, 2 and 3 (Q1, Q2, Q3). The purpose is to reproduce Figure 3 from a paper done by Schaefer, Douglas. A. et al. titled *Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico* [(2000)](https://doi.org/10.1017/s0266467400001358).
+This repository contains all of the data and code used to analyze the effects of Hurricane Hugo's disturbance on stream water concentrations of potassium (K), nitrate (NO$_3$), magnesium (Mg), calcium, (Ca) and ammonium (NH$_4$), in the Puente Roto Mameyes (PRM) and Bisley Quebradas 1, 2 and 3 (Q1, Q2, Q3) watersheds of the Luquillo Experimental Forest, Puerto Rico. The purpose is to reproduce Figure 3 (see below) from a paper done by Schaefer, Douglas. A. et al. titled *Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico* [(2000)](https://doi.org/10.1017/s0266467400001358).
 
+![](eds214_paper_graph)
 
 
 ## Data
