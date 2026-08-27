@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>paper</title>
+<title>self-assessment</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,85 +26,21 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="paper_files/libs/clipboard/clipboard.min.js"></script>
-<script src="paper_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="paper_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="paper_files/libs/quarto-html/popper.min.js"></script>
-<script src="paper_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="paper_files/libs/quarto-html/anchor.min.js"></script>
-<link href="paper_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="paper_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="paper_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="paper_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="paper_files/libs/bootstrap/bootstrap-917079515d91bccb85b543faf8aa8bb6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="self-assessment_files/libs/clipboard/clipboard.min.js"></script>
+<script src="self-assessment_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="self-assessment_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="self-assessment_files/libs/quarto-html/popper.min.js"></script>
+<script src="self-assessment_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="self-assessment_files/libs/quarto-html/anchor.min.js"></script>
+<link href="self-assessment_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="self-assessment_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="self-assessment_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="self-assessment_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="self-assessment_files/libs/bootstrap/bootstrap-917079515d91bccb85b543faf8aa8bb6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -117,76 +53,95 @@ window.Quarto = {
 
 
 
-<section id="reproducing-a-time-series-of-hurricane-hugos-effect-on-stream-water-concentrations" class="level1">
-<h1>Reproducing a Time Series of Hurricane Hugo’s Effect on Stream Water Concentrations</h1>
-<p>Author: <a href="https://github.com/karolinasienko">Karolina Sienko</a></p>
-<p>Contributors: <a href="https://github.com/FlukeAndFeather">Max Czapanskiy</a> &amp; <a href="https://github.com/avidalmeza">Ale Vida Meza</a></p>
-<section id="background" class="level2">
-<h2 class="anchored" data-anchor-id="background">Background</h2>
-<p>This repository contains all of the data and code used to analyze the effects of Hurricane Hugo’s disturbance on stream water concentrations of potassium (K), nitrate (NO<span class="math inline">\(_3\)</span>), magnesium (Mg), calcium, (Ca) and ammonium (NH<span class="math inline">\(_4\)</span>), in Puente Roto Mameyes (PRM) and Bisley Quebradas 1, 2 and 3 (Q1, Q2, Q3). The purpose is to reproduce Figure 3 from a paper done by Schaefer, Douglas. A. et al.&nbsp;titled <em>Effects of hurricane disturbance on stream water concentrations and fluxes in eight tropical forest watersheds of the Luquillo Experimental Forest, Puerto Rico</em> <a href="https://doi.org/10.1017/s0266467400001358">(2000)</a>.</p>
-</section>
-<section id="data" class="level2">
-<h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>The following data files for this analysis were downloaded from <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-luq.20.4923064">EDI Data Portal</a> and can be found in the folder <code>raw_data</code>:</p>
+<section id="karolina-sienko---eds-214-final-project-self-assessment" class="level1">
+<h1>Karolina Sienko - EDS 214 Final Project Self-Assessment</h1>
+<section id="automate" class="level2">
+<h2 class="anchored" data-anchor-id="automate">Automate</h2>
+<section id="the-entire-analysis-is-automated" class="level4">
+<h4 class="anchored" data-anchor-id="the-entire-analysis-is-automated">The entire analysis is automated</h4>
 <ul>
-<li>QuebradaCuenca1-Bisley.csv</li>
-<li>QuebradaCuenca2-Bisley.csv</li>
-<li>QuebradaCuenca3-Bisley.csv</li>
-<li>RioMameyesPuenteRoto.csv</li>
+<li>Data reading and cleaning is handled in a standalone script that creates intermediate output(s).</li>
 </ul>
-<p>Each .csv file was read in and filtered to the date range from October 18th, 1988 to December 31st, 1994. The relevant columns corresponding to Sample ID, Sample Date, and concentrations for K, NO<span class="math inline">\(_3\)</span>, Mg, Ca, and NH<span class="math inline">\(_4\)</span> were also selected.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>fig3_long <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../output/fig3_long.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<p><em>Meets spec: My data reading and cleaning are handled in their own script and there are separate data frames for each watershed.</em></p>
+<ul>
+<li>The analysis is performed in a Quarto document that reads intermediate outputs.</li>
+</ul>
+<p><em>Meets spec: My analysis is performed in a Quarto document and </em></p>
+<ul>
+<li>Files in the R/ folder exclusively define functions and have no other side effects.</li>
+</ul>
+<p><em>Meets spec: I only have one file in my R folder and it’s where the moving_average function is defined.</em></p>
+<ul>
+<li>All scripts run without errors.</li>
+</ul>
+<p><em>Meets spec: All of my scripts run without errors.</em></p>
 </section>
-<section id="methods" class="level2">
-<h2 class="anchored" data-anchor-id="methods">Methods</h2>
-<p>The concentrations for each of the five nutrients in each of the four watersheds were averaged using a 9-week moving window. These were all combined into one data frame which was pivoted longer, and they were then graphed to replicate Figure 3 from Schaefer et al.&nbsp;<a href="https://doi.org/10.1017/s0266467400001358">(2000)</a>.</p>
+<section id="the-analysis-produces-the-expected-output" class="level4">
+<h4 class="anchored" data-anchor-id="the-analysis-produces-the-expected-output">The analysis produces the expected output</h4>
+<ul>
+<li><p>The Quarto document performs the data analysis (moving average).</p></li>
+<li><p>The Quarto document creates a figure that is a reasonable approximation of the original.</p></li>
+</ul>
 </section>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Graphing each watershed's concentrations</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>fig3_long <span class="sc">|&gt;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> window_start,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> Concentration,</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">linetype =</span> Sample_ID</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Moving concentration labels to the left of the graph</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.placement =</span> <span class="st">"outside"</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Graphing a vertical line to represent the date of the hurrican</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">xintercept =</span> <span class="fu">date</span>(<span class="st">"1989-09-19"</span>),</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">"dashed"</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Nutrient Concentrations with 9-week Moving Average"</span>,</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Concentration"</span>,</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Years"</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(Nutrient <span class="sc">~</span> ., <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">switch =</span> <span class="st">"y"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="paper_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
 </section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<p>McDowell, William H., and USDA Forest Service. International Institute Of Tropical Forestry (IITF). 2024. “Chemistry of Stream Water from the Luquillo Mountains.” <a href="https://doi.org/10.6073/PASTA/F31349BEBDC304F758718F4798D25458">Environmental Data Initiative</a>.</p>
-<p>Schaefer, Douglas. A., William H. McDowell, Fredrick N. Scatena, and Clyde E. Asbury. 2000. “Effects of Hurricane Disturbance on Stream Water Concentrations and Fluxes in Eight Tropical Forest Watersheds of the Luquillo Experimental Forest, Puerto Rico.” <a href="https://doi.org/10.1017/s0266467400001358">Journal of Tropical Ecology 16 (2): 189–207</a>.</p>
+<section id="organize" class="level2">
+<h2 class="anchored" data-anchor-id="organize">Organize</h2>
+<section id="data-are-properly-organized" class="level4">
+<h4 class="anchored" data-anchor-id="data-are-properly-organized">Data are properly organized</h4>
+<ul>
+<li><p>Raw data is contained in its own folder.</p></li>
+<li><p>Outputs are contained in a separate folder from raw data.</p></li>
+</ul>
+</section>
+<section id="code-is-properly-organized" class="level4">
+<h4 class="anchored" data-anchor-id="code-is-properly-organized">Code is properly organized</h4>
+<ul>
+<li><p>At least one function is defined in a script in R/ and used elsewhere in the workflow.</p></li>
+<li><p>All code in the repo (except in the scratch/ folder) is required for the analysis (i.e., no “safety blanket” code remaining)</p></li>
+</ul>
+</section>
+</section>
+<section id="document" class="level2">
+<h2 class="anchored" data-anchor-id="document">Document</h2>
+<section id="the-repo-has-an-effective-readme" class="level4">
+<h4 class="anchored" data-anchor-id="the-repo-has-an-effective-readme">The repo has an effective README</h4>
+<ul>
+<li><p>A short, but descriptive title</p></li>
+<li><p>A brief explanation of the repository’s purpose</p>
+<ul>
+<li>Paragraphs or a bulleted list are both acceptable options</li>
+<li>You may include an image or logo that represents the project</li>
+</ul></li>
+<li><p>A concise description of what’s housed in the repository</p>
+<ul>
+<li>This includes information about the repository structure or file organization</li>
+</ul></li>
+<li><p>Details regarding data access</p>
+<ul>
+<li>Any necessary information on where data lives (e.g.&nbsp;is it housed in the repo, on a server, in a library/package etc.) and how to access it in order to run the code</li>
+</ul></li>
+<li><p>A list of authors or current contributors (for collaborative work)</p>
+<ul>
+<li>Consider hyperlinking collaborators’ GitHub profiles or other professional profile</li>
+</ul></li>
+<li><p>References</p>
+<ul>
+<li>In an appropriate, consistent format, including links.</li>
+<li>Don’t forget to add references for datasets too.</li>
+</ul></li>
+</ul>
+</section>
+<section id="code-follows-a-professional-style" class="level4">
+<h4 class="anchored" data-anchor-id="code-follows-a-professional-style">Code follows a professional style</h4>
+<ul>
+<li>All code files follow a consistent style (the Air formatter automates this).</li>
+<li>The code has an appropriate amount of comments.
+<ul>
+<li>Comments are minimized by using meaningful variable names and helper functions.</li>
+<li>Comments are used to explain the why of code, not the what.</li>
+</ul></li>
+</ul>
+</section>
 </section>
 </section>
 

@@ -4,10 +4,10 @@ library(lubridate)
 source("R/moving-average.R")
 
 # Reading in each dataset
-bq1_data <- read_csv("1_raw_data/QuebradaCuenca1-Bisley.csv")
-bq2_data <- read_csv("1_raw_data/QuebradaCuenca2-Bisley.csv")
-bq3_data <- read_csv("1_raw_data/QuebradaCuenca3-Bisley.csv")
-PRM_data <- read_csv("1_raw_data/RioMameyesPuenteRoto.csv")
+bq1_data <- read_csv("raw_data/QuebradaCuenca1-Bisley.csv")
+bq2_data <- read_csv("raw_data/QuebradaCuenca2-Bisley.csv")
+bq3_data <- read_csv("raw_data/QuebradaCuenca3-Bisley.csv")
+PRM_data <- read_csv("raw_data/RioMameyesPuenteRoto.csv")
 
 
 # Extracting relevant columns (date range, concentrations, etc.)
@@ -46,32 +46,4 @@ combined_table_long <- combined_table |>
   )
 
 
-write_csv
-
-
-# Graphing all concentrations for each watershed to match the paper's figure
-combined_table_long |>
-  ggplot(
-    aes(
-      x = window_start,
-      y = Concentration,
-      linetype = Sample_ID
-    )
-  ) +
-  geom_line() +
-  theme(
-    strip.placement = "outside"
-  ) +
-  geom_vline(
-    xintercept = date("1989-09-19"),
-    linetype = "dashed"
-  ) +
-  labs(
-    title = "Nutrient Concentrations with 9-week Moving Average",
-    y = "Concentration",
-    x = "Years"
-  ) +
-  facet_grid(Nutrient ~ ., scales = "free", switch = "y")
-
-# Saving the figure
-ggsave("fig3.png", width = 6, height = 4, dpi = 300) 
+write_csv(combined_table_long, "output/fig3_long.csv")
