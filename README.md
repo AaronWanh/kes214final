@@ -18,8 +18,6 @@ The following files were downloaded, and they can be found in the folder `1_raw_
 - QuebradaCuenca3-Bisley.csv
 - RioMameyesPuenteRoto.csv
 
-The folder `2_data_cleaning` contains the code that extracts the columns from the raw data files that are necessary for the reproducing process.
-
 ## Results
 
 
