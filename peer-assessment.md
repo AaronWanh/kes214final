@@ -1,97 +1,100 @@
----
-title: "Final Project"
-bibliography: references.bib
----
+## Automate
 
-## Goals
+#### The entire analysis is automated
 
-The final project for EDS 214 is to create an analytical workflow to reproduce figure 3 of @schaefer2000. This project is your opportunity to gain and demonstrate competency in the learning goals of this course.
+- Data reading and cleaning is handled in a standalone script that creates intermediate output(s).
 
-## Milestones
+*Met spec: 1_clean_data.R is very well organized with great amount of comments for explanation on what is happening.*
 
-### Monday August 24^th^
+- The analysis is performed in a Quarto document that reads intermediate outputs.
 
--   Draft a flowchart that visually describes the plan for your analysis
+*Met spec: output folder made and labeled*
 
--   Write spaghetti code that accomplishes some of the steps in your analysis
+- Files in the R/ folder exclusively define functions and have no other side effects.
 
-### Tuesday August 25^th^
+*Met spec: I only have one file in my R folder and it's where the moving_average function is defined and nothing else.*
 
--   Draft documentation for your data and code
+- All scripts run without errors.
 
--   Cause a merge conflict
+*Meets spec: All of my scripts run without errors.*
 
-### Wednesday August 26^th^
+#### The analysis produces the expected output
 
--   Resolve a merge conflict
+- The Quarto document performs the data analysis (moving average).
 
--   Create GitHub Issues to describe and organize tasks
+*Mets spec: Your Quarto document looks very professional and organized! It makes understanding what you did clear and concise.*
 
--   Merge changes using Pull requests
+- The Quarto document creates a figure that is a reasonable approximation of the original.
 
-### Thursday August 27^th^
+*Met specs: The figure looks great in your results, but would reccomend adding color because it is hard to distinguish Q1, Q2, and Q3 because the style of the lines look very similar at certain points.*
 
--   Finish drafting your reproducible workflow
 
--   Perform a [self-assessment](final-project-self-assessment.qmd) and [peer review](final-project-peer-review.qmd) to critique workflows
+## Organize
 
-### Friday August 28^th^
+#### Data are properly organized
 
--   [Submit your final project](final-project-submission.qmd) for instructor feedback
+- Raw data is contained in its own folder.
 
--   Incorporate feedback to refine your workflow
+*Meets spec: All of my raw data is in the raw_data folder.*
 
--   Celebrate completing EDS 214!
+- Outputs are contained in a separate folder from raw data.
 
-## Specifications
+*Met specs: It is very helpful that you labled the csv you created in the folder. I would reccomend renaming it once you are fully finished.*
 
-Your final project will be assessed according to specifications spread across the five learning objectives. Your peers instructors will give you feedback on each specification and assess your work as *Not yet* or *Meets spec*. You will have opportunities to incorporate feedback and move your assessments up a category.
+#### Code is properly organized
 
-### Automate
+- At least one function is defined in a script in R/ and used elsewhere in the workflow.
 
-- [ ] **The entire analysis is automated**
-  - Data reading and cleaning is handled in a standalone script that creates intermediate output(s).
-  - The analysis is performed in a Quarto document that reads intermediate outputs.
-  - Files in the R/ folder exclusively define functions and have no other side effects.
-  - All scripts run without errors.
+*Meets spec: The moving_average function is defined in a script in R/ and is used in the main analysis code. If you would like to create another function, you can develop one that extracts the relevant colums. I am going to attempt this to make it look more tidy.*
 
-- [ ] **The analysis produces the expected output**
-  - The Quarto document performs the data analysis (moving average).
-  - The Quarto document creates a figure that is a reasonable approximation of the original.
+- All code in the repo (except in the scratch/ folder) is required for the analysis (i.e., no “safety blanket” code remaining)
 
-### Organize
+*Meets spec: All of my code is either in the scratch/ folder or main analysis code.*
 
-- [ ] **Data are properly organized**
-  - _Raw_ data is contained in its own folder.
-  - _Outputs_ are contained in a separate folder from raw data.
 
-- [ ] **Code is properly organized**
-  - At least one function is defined in a script in R/ and used elsewhere in the workflow.
-  - All code in the repo (_except_ in the scratch/ folder) is required for the analysis (i.e., no "safety blanket" code remaining)
+## Document
 
-### Document
+#### The repo has an effective README
 
-- [ ] **The repo has an effective README** 
-  - A short, but descriptive title 
-    - A README’s title is set to the repository name by default - change this!
-  - A brief explanation of the repository’s purpose
+- A short, but descriptive title
+
+*Not yet: I need to make the title shorter.*
+
+- A brief explanation of the repository’s purpose
     - Paragraphs or a bulleted list are both acceptable options
     - You may include an image or logo that represents the project
-  - A concise description of what’s housed in the repository
-    - This includes information about the repository structure or file organization 
-  - Details regarding data access
+
+*Meets spec: I do have a brief explanation of the repo's purpose explaining we're re-generating a certain figure from a certain paper.*
+
+- A concise description of what’s housed in the repository
+    - This includes information about the repository structure or file organization
+
+*Not yet: I'm going to do this at the end once I have all the correct files and folders organized. In your README on line 21, you said a file was named 2_clean_data, ensure you rename your folder to match. Just for conistency double check that what you call the files in the read me are the same as the name of the folders.*
+
+- Details regarding data access
     - Any necessary information on where data lives (e.g. is it housed in the repo, on a server, in a library/package etc.) and how to access it in order to run the code
-  - A list of authors or current contributors (for collaborative work)
+
+*Not yet: I describe where the data is in the repo but not how to access it in order to run the code.*
+
+- A list of authors or current contributors (for collaborative work)
     - Consider hyperlinking collaborators’ GitHub profiles or other professional profile
-  - References 
+
+*Meets spec:*
+
+- References
     - In an appropriate, consistent format, including links.
     - Don’t forget to add references for datasets too.
-    
-- [ ] **Code follows a professional style**
-  - All code files follow a consistent style (the Air formatter automates this).
-  - The code has an appropriate amount of comments.
-    - Comments are minimized by using _meaningful variable names_ and _helper functions_.
-    - Comments are used to [explain the _why_ of code, not the _what_](https://style.tidyverse.org/functions.html#comments).
 
+*Met spec:*
 
-  
+#### Code follows a professional style
+
+- All code files follow a consistent style (the Air formatter automates this).
+
+*Meets spec: Yes, the style of my code is consistent.*
+
+- The code has an appropriate amount of comments.
+    - Comments are minimized by using meaningful variable names and helper functions.
+    - Comments are used to explain the why of code, not the what.
+
+*Meets spec: I enjoyed your comments!*
